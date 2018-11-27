@@ -9,10 +9,10 @@ namespace Demo
         {
             InitializeComponent();
 
-            const string customTemplate = "Not Logged {Timestamp: yyyy-MM-dd HH:mm:ss.ff zzz} [{Level}] {Message}{NewLine}{Exception}";
+            //const string customTemplate = "Not Logged {Timestamp: yyyy-MM-dd HH:mm:ss.ff zzz} [{Level}] {Message}{NewLine}{Exception}";
 
             ILogger logger = new LoggerConfiguration()
-                                    .WriteTo.RollingFile("logfile.txt", outputTemplate: customTemplate, fileSizeLimitBytes: null)
+                                    .WriteTo.RollingFile("rollinglogfile.txt")
                                     .CreateLogger();
 
             //Static property to save configured logger instance
@@ -27,7 +27,7 @@ namespace Demo
             // log some information
             
 
-            Log.Logger.Information("Added User");
+            Log.Information("Added User");
             
         }
     }
