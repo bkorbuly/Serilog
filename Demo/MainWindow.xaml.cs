@@ -14,6 +14,7 @@ namespace Demo
             //const string customTemplate = "Not Logged {Timestamp: yyyy-MM-dd HH:mm:ss.ff zzz} [{Level}] {Message}{NewLine}{Exception}";
 
             ILogger logger = new LoggerConfiguration()
+                                    .Destructure.ByTransforming<Color>(x => new { x.Red, x.Green })
                                     .WriteTo.Console()
                                     .CreateLogger();
 
