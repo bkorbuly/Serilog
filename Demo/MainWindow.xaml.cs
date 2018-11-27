@@ -12,7 +12,7 @@ namespace Demo
             //const string customTemplate = "Not Logged {Timestamp: yyyy-MM-dd HH:mm:ss.ff zzz} [{Level}] {Message}{NewLine}{Exception}";
 
             ILogger logger = new LoggerConfiguration()
-                                    .WriteTo.RollingFile("rollinglogfile.txt",retainedFileCountLimit: 2)
+                                    .WriteTo.Console()
                                     .CreateLogger();
 
             //Static property to save configured logger instance
@@ -24,10 +24,11 @@ namespace Demo
             // add user to database            
             MessageBox.Show("User added");
 
-            // log some information
-            
+            string name = Name.Text;
+            int age = int.Parse(Age.Text);
 
-            Log.Information("Added User");
+            // log some information        
+            Log.Information("Added User {UserName}, Age {UserAge}", name, age);
             
         }
     }
