@@ -51,7 +51,7 @@ namespace ConsoleApplication
         private static void InitLogging()
         {
             Log.Logger = new LoggerConfiguration()
-                //.MinimumLevel.Verbose() 
+                .MinimumLevel.Verbose() 
                 .WriteTo.ColoredConsole()
                 .CreateLogger();
         }
