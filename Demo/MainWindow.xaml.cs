@@ -31,15 +31,15 @@ namespace Demo
             int age = int.Parse(Age.Text);
             DateTime dateAdded = DateTime.Now;
 
-            IEnumerable favColors = new List<string>
+            Dictionary<string, int> visitied = new Dictionary<string, int>
                 {
-                    "red",
-                    "orange",
-                    "black"
+                    {"England", 5},
+                    {"India", 2},
+                    {"France", 1}
                 };
 
             // log some information        
-            Log.Information("Added User {UserName}, Age {UserAge}. Favourite: {Colors} Added on {Created} - {ID}",  name, age, favColors, dateAdded, Guid.NewGuid());
+            Log.Information("Added User {UserName}, Age {UserAge}. Countries: {VisitedCountries} Added on {Created} - {ID}",  name, age, visitied, dateAdded, Guid.NewGuid());
             
         }
     }
