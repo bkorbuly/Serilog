@@ -30,7 +30,7 @@ namespace Demo
             DateTime dateAdded = DateTime.Now;
 
             // log some information        
-            Log.Information("Added User {UserName}, Age {UserAge}. Added on {Created}",  name, age, dateAdded);
+            Log.Information("Added User {UserName}, Age {UserAge}. Added on {Created} - {ID}",  name, age, dateAdded, Guid.NewGuid());
             
         }
     }
