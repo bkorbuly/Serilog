@@ -1,7 +1,6 @@
-﻿using Serilog;
+﻿using Demo.Properties;
+using Serilog;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Windows;
 
 namespace Demo
@@ -31,15 +30,14 @@ namespace Demo
             int age = int.Parse(Age.Text);
             DateTime dateAdded = DateTime.Now;
 
-            Dictionary<string, int> visitied = new Dictionary<string, int>
+            Color favColor = new Color
                 {
-                    {"England", 5},
-                    {"India", 2},
-                    {"France", 1}
+                    Red = 122,
+                    Green = 24,
+                    Blue = 19
                 };
-
             // log some information        
-            Log.Information("Added User {UserName}, Age {UserAge}. Countries: {VisitedCountries} Added on {Created} - {ID}",  name, age, visitied, dateAdded, Guid.NewGuid());
+            Log.Information("Added User {UserName}, Age {UserAge}. Favourite {Color} Added on {Created} - {ID}",  name, age, favColor, dateAdded, Guid.NewGuid());
             
         }
     }
