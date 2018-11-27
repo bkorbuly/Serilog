@@ -12,9 +12,9 @@ namespace Demo.Properties
         public int Green { get; set; }
         public int Blue { get; set; }
 
-        public override string ToString()
-        {
-            return string.Format("R:{0} G:{1} B:{2}", Red, Green, Blue);
-        }
+        //public override string ToString()
+        //{
+        //    return string.Format("R:{0} G:{1} B:{2}", Red, Green, Blue);
+        //}
     }
 }

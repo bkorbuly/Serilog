@@ -37,7 +37,7 @@ namespace Demo
                     Blue = 19
                 };
             // log some information        
-            Log.Information("Added User {UserName}, Age {UserAge}. Favourite {Color} Added on {@Created} - {ID}",  name, age, favColor, dateAdded, Guid.NewGuid());
+            Log.Information("Added User {UserName}, Age {UserAge}. Favourite {@Color} Added on {Created} - {ID}",  name, age, favColor, dateAdded, Guid.NewGuid());
             
         }
     }
