@@ -1,4 +1,5 @@
 ﻿using Serilog;
+using System;
 using System.Windows;
 
 namespace Demo
@@ -26,9 +27,10 @@ namespace Demo
 
             string name = Name.Text;
             int age = int.Parse(Age.Text);
+            DateTime dateAdded = DateTime.Now;
 
             // log some information        
-            Log.Information("Added User {UserName}, Age {UserAge}", name, age);
+            Log.Information("Added User {UserName}, Age {UserAge}. Added on {Created}",  name, age, dateAdded);
             
         }
     }
