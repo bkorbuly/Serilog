@@ -12,7 +12,7 @@ namespace Demo
             //const string customTemplate = "Not Logged {Timestamp: yyyy-MM-dd HH:mm:ss.ff zzz} [{Level}] {Message}{NewLine}{Exception}";
 
             ILogger logger = new LoggerConfiguration()
-                                    .WriteTo.RollingFile("rollinglogfile.txt")
+                                    .WriteTo.RollingFile("rollinglogfile.txt",retainedFileCountLimit: 2)
                                     .CreateLogger();
 
             //Static property to save configured logger instance
