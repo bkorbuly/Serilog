@@ -1,5 +1,7 @@
 ﻿using Serilog;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace Demo
@@ -29,8 +31,15 @@ namespace Demo
             int age = int.Parse(Age.Text);
             DateTime dateAdded = DateTime.Now;
 
+            IEnumerable favColors = new List<string>
+                {
+                    "red",
+                    "orange",
+                    "black"
+                };
+
             // log some information        
-            Log.Information("Added User {UserName}, Age {UserAge}. Added on {Created} - {ID}",  name, age, dateAdded, Guid.NewGuid());
+            Log.Information("Added User {UserName}, Age {UserAge}. Favourite: {Colors} Added on {Created} - {ID}",  name, age, favColors, dateAdded, Guid.NewGuid());
             
         }
     }
