@@ -30,6 +30,7 @@ namespace Demo
             string name = Name.Text;
             int age = int.Parse(Age.Text);
             DateTime dateAdded = DateTime.Now;
+            double pi = Math.PI;
 
             Color favColor = new Color
                 {
@@ -38,7 +39,7 @@ namespace Demo
                     Blue = 19
                 };
             // log some information        
-            Log.Information("Added User {UserName:l}, Age {UserAge}. Favourite {@Color} Added on {Created} - {ID}",  name, age, favColor, dateAdded, Guid.NewGuid());
+            Log.Information("Added User {UserName:l}, Age {UserAge}. PI is {PI:0.00} Added on {Created} - {ID}",  name, age, pi, dateAdded, Guid.NewGuid());
             
         }
     }
