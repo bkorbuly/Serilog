@@ -1,5 +1,6 @@
 ﻿using System;
 using Serilog;
+using Serilog.Events;
 
 namespace ConsoleApplication
 {
@@ -51,8 +52,10 @@ namespace ConsoleApplication
         private static void InitLogging()
         {
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug() 
-                .WriteTo.ColoredConsole()
+                //Overall minimul log level
+                .MinimumLevel.Verbose() 
+                .WriteTo.ColoredConsole(restrictedToMinimumLevel: LogEventLevel.Information)
+                .WriteTo.File("verboselog.txt", restrictedToMinimumLevel: LogEventLevel.Verbose)
                 .CreateLogger();
         }
     }
